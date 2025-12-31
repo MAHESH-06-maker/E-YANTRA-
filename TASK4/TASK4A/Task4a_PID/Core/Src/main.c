@@ -258,7 +258,7 @@ int main(void)
 	    }
 
 	    if(robotState==INVERSE_LINE){
-	    	//Black line with White background
+	    	//Black line then stop
 	    	Motor_Stop();
 	    	continue;
 	    }
