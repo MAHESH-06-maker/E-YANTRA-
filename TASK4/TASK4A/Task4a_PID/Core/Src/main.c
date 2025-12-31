@@ -88,7 +88,8 @@ typedef enum {
     STATE_STOP_BEFORE_TURN,
     STATE_TURNING,
 	ALL_BLACK_FORWARD,
-	ALL_BLACK_CHECK
+	ALL_BLACK_CHECK,
+	INVERSE_LINE
 } RobotState_t;
 
 RobotState_t robotState = STATE_PID;
@@ -249,13 +250,17 @@ int main(void)
 //	        	stateStartTime = HAL_GetTick();
 //	        	continue;
 //	        }
-	        if(bit_sensor==0b11011|| bit_sensor==0b10001){
+	        if(bit_sensor==0b11011|| bit_sensor==0b10001 || bit_sensor==0b11101|| bit_sensor==0b10111){
 	        	//inverse line detected
-	        	Motor_Stop();
+	        	robotState=INVERSE_LINE;
 	        	continue;
 	        }
 	    }
 
+	    if(robotState==INVERSE_LINE){
+	    	Motor_Stop();
+	    	continue;
+	    }
 	    if (robotState == STATE_PEEK_FORWARD)
 	    {
 	        Motor_Forward(100, 100);
