@@ -5,6 +5,7 @@ This repository contains the implementation of tasks completed as part of the e-
 The project focuses on designing and programming an autonomous robotic system capable of performing precision agricultural tasks such as navigation, detection, and crop handling.
 
 🚀 Project Overview
+![cropdrop bot](https://github.com/user-attachments/assets/993b733c-fa0c-4967-b6f5-6e2305c740da)
 
 The CropDrop Bot theme is centered around automation in agriculture, where a robot is required to:
 
